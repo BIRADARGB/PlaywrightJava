@@ -26,6 +26,14 @@
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.6.3</version>
+                <configuration>
+                    <mainClass>com.microsoft.playwright.CLI</mainClass>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
@@ -54,3 +62,5 @@
     </dependencies>
 
 </project>
+<!--        CLI command to launch codegen for recording-->
+<!--        mvn hypen hypen% exec:java -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="codegen https://www.google.com"-->
