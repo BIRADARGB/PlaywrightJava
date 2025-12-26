@@ -9,7 +9,7 @@ public class BaseTest {
     Playwright playwright = Playwright.create();
     public Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
     private Page page = browser.newPage();
-    NaukriLoginPage loginpage;
+    LoginPage loginpage;
 
     public void loginToNaukri(){
         page.navigate("https://www.naukri.com");
@@ -17,9 +17,9 @@ public class BaseTest {
         System.out.println("page title is: "+pageTitle);
     }
 
-    public NaukriLoginPage getLoginPageObject(){
+    public LoginPage getLoginPageObject(){
         if(loginpage==null){
-            loginpage = new NaukriLoginPage(page);
+            loginpage = new LoginPage(page);
         }
         return  loginpage;
     }
